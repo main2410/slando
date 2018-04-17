@@ -37,4 +37,6 @@ Project created, configured;
 
 7) Create UserDao with getByLogin(String login), add(User u), update(User u) methods
 
-8) Create ItemDao with get(), getById(String id), add(Item i),
+8) Create ItemDao with get(), getById(String id), add(Item i)
+
+9) Create main.jsp
