@@ -13,7 +13,7 @@ Project created, configured;
    email VARCHAR(255)
    city VARCHAR(255)
    create_date TIMESTAMP    (@Column(name="create_date"))
-
+DONE (need lombok plagin)
 3) Create entity of 'slando_item' table
    Item table structure:
    id VARCHAR(255) pk
@@ -28,13 +28,13 @@ Project created, configured;
    price INT
    create_date TIMESTAMP   (java.util.Date)
    is_vip TINYINT
-
+DONE (need lombok plagin)
 4) Create RegisterController     /register
 
 5) Create LoginController        /login
 
 6) Configure Hibernate (hibernate.cfg.xml, HibernateUtil)
-
+DONE
 7) Create UserDao with getByLogin(String login), add(User u), update(User u) methods
 
 8) Create ItemDao with get(), getById(String id), add(Item i)
