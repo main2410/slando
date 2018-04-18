@@ -57,13 +57,13 @@ Project created, configured;
 
 17)Create UserService, ItemService as spring services
 
-18)Write code in RegisterController's post-mapped method witch registers a new user
+18)Create AuthenticationService as spring service
 
 19)Update main.jsp to receive 'user' object and show correct buttons - sign in or profile/exit/add new item (with help of jstl's if and forEach)
 
 20)Update MainController to place 'user' object from session to the model
 
-21)Create AuthenticationService as spring service
+21)Write code in RegisterController's post-mapped method witch registers a new user
 
 22)Update MainController to do exit
 
