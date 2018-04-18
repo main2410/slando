@@ -29,9 +29,9 @@ Project created, configured;
    create_date TIMESTAMP   (java.util.Date)
    is_vip TINYINT
 
-4) Create RegisterController
+4) Create RegisterController     /register
 
-5) Create LoginController
+5) Create LoginController        /login
 
 6) Configure Hibernate (hibernate.cfg.xml, HibernateUtil)
 
@@ -40,3 +40,7 @@ Project created, configured;
 8) Create ItemDao with get(), getById(String id), add(Item i)
 
 9) Create main.jsp
+
+10)Configure SpringMVC in web.xml (DispatcherServlet adding)
+
+11)Write code in get-mapped method of MainController
