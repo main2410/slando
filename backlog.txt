@@ -2,7 +2,7 @@ SLANDO
 
 Project created, configured;
 
-1) Create MainController witch receiving requests to / or /main or /index
+1) Create MainController witch receiving requests to /
 
 2) Create entity of 'slando_user' table
    User table structure:
@@ -43,4 +43,28 @@ Project created, configured;
 
 10)Configure SpringMVC in web.xml (DispatcherServlet adding)
 
-11)Write code in get-mapped method of MainController
+11)Create dispatcher-servlet.xml (from pervious project)
+
+12)Write code in get-mapped method of MainController to show main.jsp
+
+13)Create register.jsp
+
+14)Create login.jsp
+
+15)Write code in RegisterController's get-mapped method to show register.jsp
+
+16)Write code in LoginController's get-mapped method to show login.jsp
+
+17)Create UserService, ItemService as spring services
+
+18)Write code in RegisterController's post-mapped method witch registers a new user
+
+19)Update main.jsp to receive 'user' object and show correct buttons - sign in or profile/exit/add new item (with help of jstl's if and forEach)
+
+20)Update MainController to place 'user' object from session to the model
+
+21)Create AuthenticationService as spring service
+
+22)Update MainController to do exit
+
+23)Write code in LoginController's post-mapped method to log in a user ('user' object in session's attribute)
