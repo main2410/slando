@@ -1,11 +1,12 @@
 package entity;
 
 import lombok.*;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.Date;
+import java.sql.Timestamp;
 import java.util.UUID;
 
 @Getter
@@ -28,6 +29,6 @@ public class User {
     private String email;
     private String city;
     @Column(name = "create_date")
-    private Date createDate;
+    private Timestamp createDate;
 
 }
