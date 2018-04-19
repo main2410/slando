@@ -4,7 +4,7 @@
                  height: 40px;
                  border-top: 1.5px solid #999999;
                  background-color: #cccccc;">
-            <span>Copyright: Sava<span>
+            <span>Copyright: Sava</span>
         </div>
     </body>
 </html>

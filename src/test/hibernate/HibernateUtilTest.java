@@ -2,11 +2,12 @@ package hibernate;
 
 import entity.User;
 import org.hibernate.Session;
+import org.junit.Test;
 
 
 public class HibernateUtilTest {
 
-    @org.junit.Test
+    @Test
     public void getSessionFactory() {
         Session s = HibernateUtil.getSessionFactory().openSession();
         s.beginTransaction();
