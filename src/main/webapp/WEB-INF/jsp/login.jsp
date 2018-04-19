@@ -6,7 +6,7 @@
 <form action="/login" method="POST">
     <b>Name:</b><input type="text" name="login"><br>
     <b>Password:</b><input type="password" name="pass"><br>
-    <input type="submit" value="Register">
+    <input type="submit" value="Login">
 </form>
 
 <jsp:include page="footer.jsp">
