@@ -14,11 +14,9 @@ public class MainController {
     private static final String MAIN_URL = "/main";
     private static final String MAIN = "main";
     private static final String EXIT = "exit";
-    private static final String USER = "user";
 
     @RequestMapping(name = MAIN_URL, method = RequestMethod.GET)
-    public ModelAndView main(HttpServletRequest request,
-                             @RequestParam(name = EXIT, required = false) String exit){
+    public ModelAndView main(@RequestParam(name = EXIT, required = false) String exit){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName(MAIN);
         return modelAndView;

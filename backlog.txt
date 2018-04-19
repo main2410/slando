@@ -2,9 +2,9 @@ SLANDO
 
 Project created, configured;
 
-1) Create MainController witch receiving requests to /
+1)++ Create MainController witch receiving requests to /
 
-2) Create entity of 'slando_user' table
+2)++ Create entity of 'slando_user' table  (with lombok)
    User table structure:
    id VARCHAR(255) pk    (UUID.randomUUID().toString();)
    login VARCHAR(255)
@@ -14,7 +14,7 @@ Project created, configured;
    city VARCHAR(255)
    create_date TIMESTAMP    (@Column(name="create_date"))
 
-3) Create entity of 'slando_item' table
+3)++ Create entity of 'slando_item' table  (with lombok)
    Item table structure:
    id VARCHAR(255) pk
    cat VARCHAR(255)
@@ -33,19 +33,19 @@ Project created, configured;
 
 5) Create LoginController        /login
 
-6) Configure Hibernate (hibernate.cfg.xml, HibernateUtil)
+6)++ Configure Hibernate (hibernate.cfg.xml, HibernateUtil)
 
 7) Create UserDao with getByLogin(String login), add(User u), update(User u) methods
 
 8) Create ItemDao with get(), getById(String id), add(Item i)
 
-9) Create main.jsp
+9)++ Create main.jsp
 
-10)Configure SpringMVC in web.xml (DispatcherServlet adding)
+10)++Configure SpringMVC in web.xml (DispatcherServlet adding)
 
-11)Create dispatcher-servlet.xml (from pervious project)
+11)++Create dispatcher-servlet.xml (from pervious project)
 
-12)Write code in get-mapped method of MainController to show main.jsp
+12)++Write code in get-mapped method of MainController to show main.jsp
 
 13)Create register.jsp
 
