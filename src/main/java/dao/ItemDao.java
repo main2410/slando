@@ -20,5 +20,12 @@ public class ItemDao extends Dao {
         s.save(i);
         commitTransactionAndCloseSession(s);
     }
+    
+    private List<Item> getDataByQuery(String query) {
+        Session s = openSessionAndBeginTransaction();
+        List<Item> out = s.createQuery(query).list();
+        commitTransactionAndCloseSession(s);
+        return out;
+    }
 
 }
