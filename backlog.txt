@@ -49,20 +49,20 @@ Project created, configured;
 
 13)Create register.jsp
 
-14)Create login.jsp
+14)++Create login.jsp
 
-15)Write code in RegisterController's get-mapped method to show register.jsp
+15)++Write code in RegisterController's get-mapped method to show register.jsp
 
-16)Write code in LoginController's get-mapped method to show login.jsp
+16)++Write code in LoginController's get-mapped method to show login.jsp
 
 17)++Create UserService, ItemService as spring services
 
 18)++Create AuthenticationService as spring service
 
-19)Update main.jsp to receive 'user' object and show correct buttons - sign in or profile/exit/add new item (with help of jstl's if and forEach)
+19)++Update main.jsp to receive 'user' object and show correct buttons - sign in or profile/exit/add new item (with help of jstl's if and forEach)
 
 20)Update MainController to place 'user' object from session to the model
-
+zdjfbsdkjfhsdgfsdljg
 21)Write code in RegisterController's post-mapped method witch registers a new user
 
 22)Update MainController to do exit
