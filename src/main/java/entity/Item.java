@@ -1,11 +1,12 @@
 package entity;
 
 import lombok.*;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.Date;
+import java.sql.Timestamp;
 import java.util.UUID;
 
 @Getter
@@ -32,7 +33,7 @@ public class Item {
     private String city;
     private Integer price;
     @Column(name = "create_date")
-    private Date createDate;
+    private Timestamp createDate;
     @Column(name = "is_vip")
     private Boolean isVip;
 }
