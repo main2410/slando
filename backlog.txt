@@ -55,9 +55,9 @@ Project created, configured;
 
 16)Write code in LoginController's get-mapped method to show login.jsp
 
-17)Create UserService, ItemService as spring services
+17)++Create UserService, ItemService as spring services
 
-18)Create AuthenticationService as spring service
+18)++Create AuthenticationService as spring service
 
 19)Update main.jsp to receive 'user' object and show correct buttons - sign in or profile/exit/add new item (with help of jstl's if and forEach)
 
