@@ -3,15 +3,11 @@
     <jsp:param name="title" value="Slando"/>
 </jsp:include>
 
-<p>
-    <b>Login:</b><input type="text" size="40">
-</p>
-<p>
-    <b>Password:</b><input type="text" size="40">
-</p>
-<p>
-    <input type="submit" value="Submit">
-</p>
+<form action="/login" method="POST">
+    <b>Name:</b><input type="text" name="login"><br>
+    <b>Password:</b><input type="password" name="pass"><br>
+    <input type="submit" value="Register">
+</form>
 
 <jsp:include page="footer.jsp">
     <jsp:param name="counter" value="${counter}"></jsp:param>
