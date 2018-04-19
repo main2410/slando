@@ -32,18 +32,18 @@
                         <span class="addText" style="color: white; position: relative;top: 15px;">
                             ADD ADVERTISEMENT</span>
                     </a>
-                </div> 
-                 <!-- <div class="addOrSignIn" style="height: 40px;
-                     margin-top: 20px;
-                     margin-left: 50px;
-                     background-color: #ff8300; 
-                     color: white;
-                     padding: 0 10px;
-                     border-radius: 15px;">
-                    <a href="/" style="text-decoration: none;">
-                        <span class="addText" style="color: white; position: relative;top: 10px; ">Sign in</span>
-                    </a>
-                </div>  -->
+                </div>
+                <!-- <div class="addOrSignIn" style="height: 40px;
+                    margin-top: 20px;
+                    margin-left: 50px;
+                    background-color: #ff8300;
+                    color: white;
+                    padding: 0 10px;
+                    border-radius: 15px;">
+                   <a href="/" style="text-decoration: none;">
+                       <span class="addText" style="color: white; position: relative;top: 10px; ">Sign in</span>
+                   </a>
+               </div>  -->
             </div>     
 
         </div>

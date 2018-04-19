@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
-
 @Controller
 public class MainController {
 
@@ -16,7 +14,7 @@ public class MainController {
     private static final String EXIT = "exit";
 
     @RequestMapping(name = MAIN_URL, method = RequestMethod.GET)
-    public ModelAndView main(@RequestParam(name = EXIT, required = false) String exit){
+    public ModelAndView main(@RequestParam(name = EXIT, required = false) String exit) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName(MAIN);
         return modelAndView;
