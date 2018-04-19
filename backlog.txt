@@ -47,7 +47,7 @@ Project created, configured;
 
 12)++Write code in get-mapped method of MainController to show main.jsp
 
-13)Create register.jsp
+13)++Create register.jsp
 
 14)++Create login.jsp
 
