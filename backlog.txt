@@ -49,7 +49,7 @@ Project created, configured;
 
 13)Create register.jsp
 
-14)Create login.jsp
+14)++Create login.jsp
 
 15)++Write code in RegisterController's get-mapped method to show register.jsp
 
