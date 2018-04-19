@@ -21,10 +21,4 @@ public abstract class Dao {
         s.close();
     }
 
-    protected List<Item> getDataByQuery(String query) {
-        Session s = openSessionAndBeginTransaction();
-        List<Item> out = s.createQuery(query).list();
-        commitTransactionAndCloseSession(s);
-        return out;
     }
-}

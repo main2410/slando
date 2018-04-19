@@ -12,6 +12,7 @@ public class MainController {
     private static final String MAIN_URL = "/main";
     private static final String MAIN = "main";
     private static final String EXIT = "exit";
+    private static final String USER = "user";
 
     @RequestMapping(name = MAIN_URL, method = RequestMethod.GET)
     public ModelAndView main(@RequestParam(name = EXIT, required = false) String exit) {
