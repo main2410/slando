@@ -29,15 +29,15 @@ Project created, configured;
    create_date TIMESTAMP   (java.util.Date)
    is_vip TINYINT
 
-4) Create RegisterController     /register
+4)++ Create RegisterController     /register
 
-5) Create LoginController        /login
+5)++ Create LoginController        /login
 
 6)++ Configure Hibernate (hibernate.cfg.xml, HibernateUtil)
 
-7) Create UserDao with getByLogin(String login), add(User u), update(User u) methods
+7)++ Create UserDao with getByLogin(String login), add(User u), update(User u) methods
 
-8) Create ItemDao with get(), getById(String id), add(Item i)
+8)++ Create ItemDao with get(), getById(String id), add(Item i)
 
 9)++ Create main.jsp
 
