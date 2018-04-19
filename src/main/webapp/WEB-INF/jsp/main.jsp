@@ -4,7 +4,7 @@
     <jsp:param name="title" value="Slando"/>
 </jsp:include>
 
-<div class="content" style="background-color: #f7f7f7;">
+<div class="content" style="background-color: #f7f7f7; height: 600px;">
     CONTENT
 </div>
 
