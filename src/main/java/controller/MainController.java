@@ -17,7 +17,7 @@ public class MainController {
     private static final String MAIN_URL = "/main";
     private static final String MAIN = "main";
     private static final String EXIT = "exit";
-    public static final String USER = "user";
+    private static final String USER = "user";
     
     @Autowired
     private UserService userService;
