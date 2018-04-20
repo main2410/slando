@@ -4,12 +4,12 @@
 </jsp:include>
 
 <form action='/register' method='POST'>
-    Input login: <input name='login'/><br/>
-    Input pass: <input type='password' name='pass1'/><br/>
-    Confirm pass: <input type='password' name='pass2'/><br/>
-    Input phone: <input name='phone'/><br/>
-    Input email: <input name='email'/><br/>
-    Input city: <input name='city'/><br/>
+    Input login: <input required name='login'/><br/>
+    Input pass: <input required type='password' name='pass1'/><br/>
+    Confirm pass: <input required type='password' name='pass2'/><br/>
+    Input phone: <input required name='phone'/><br/>
+    Input email: <input required name='email'/><br/>
+    Input city: <input required name='city'/><br/>
     <input type='submit' value='Register'/>
 </form>
 

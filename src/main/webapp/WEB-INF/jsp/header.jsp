@@ -47,7 +47,18 @@
                     color: white;
                     padding: 0 10px;
                     border-radius: 15px;">
-                <a href="/" style="text-decoration: none;">
+                <a href="/register" style="text-decoration: none;">
+                    <span class="addText" style="color: white; position: relative;top: 10px; ">Sign up</span>
+                </a>
+            </div>
+            <div class="addOrSignIn" style="height: 40px;
+                    margin-top: 20px;
+                    margin-left: 30px;
+                    background-color: #ff8300;
+                    color: white;
+                    padding: 0 10px;
+                    border-radius: 15px;">
+                <a href="/login" style="text-decoration: none;">
                     <span class="addText" style="color: white; position: relative;top: 10px; ">Sign in</span>
                 </a>
             </div>
