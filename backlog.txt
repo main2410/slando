@@ -2,9 +2,9 @@ SLANDO
 
 Project created, configured;
 
-1) Create MainController witch receiving requests to /  ++
+1)++ Create MainController witch receiving requests to /
 
-2) Create entity of 'slando_user' table  ++
+2)++ Create entity of 'slando_user' table  (with lombok)
    User table structure:
    id VARCHAR(255) pk    (UUID.randomUUID().toString();)
    login VARCHAR(255)
@@ -14,7 +14,7 @@ Project created, configured;
    city VARCHAR(255)
    create_date TIMESTAMP    (@Column(name="create_date"))
 
-3) Create entity of 'slando_item' table  ++
+3)++ Create entity of 'slando_item' table  (with lombok)
    Item table structure:
    id VARCHAR(255) pk
    cat VARCHAR(255)
@@ -29,39 +29,39 @@ Project created, configured;
    create_date TIMESTAMP   (java.util.Date)
    is_vip TINYINT
 
-4) Create RegisterController     /register
+4)++ Create RegisterController     /register
 
-5) Create LoginController        /login
+5)++ Create LoginController        /login
 
-6) Configure Hibernate (hibernate.cfg.xml, HibernateUtil)  ++
+6)++ Configure Hibernate (hibernate.cfg.xml, HibernateUtil)
 
-7) Create UserDao with getByLogin(String login), add(User u), update(User u) methods
+7)++ Create UserDao with getByLogin(String login), add(User u), update(User u) methods
 
-8) Create ItemDao with get(), getById(String id), add(Item i)
+8)++ Create ItemDao with get(), getById(String id), add(Item i)
 
-9) Create main.jsp
+9)++ Create main.jsp
 
-10)Configure SpringMVC in web.xml (DispatcherServlet adding)  ++
+10)++Configure SpringMVC in web.xml (DispatcherServlet adding)
 
-11)Create dispatcher-servlet.xml (from pervious project)  ++
+11)++Create dispatcher-servlet.xml (from pervious project)
 
-12)Write code in get-mapped method of MainController to show main.jsp
+12)++Write code in get-mapped method of MainController to show main.jsp
 
-13)Create register.jsp
+13)++Create register.jsp
 
-14)Create login.jsp
+14)++Create login.jsp
 
-15)Write code in RegisterController's get-mapped method to show register.jsp
+15)++Write code in RegisterController's get-mapped method to show register.jsp
 
-16)Write code in LoginController's get-mapped method to show login.jsp
+16)++Write code in LoginController's get-mapped method to show login.jsp
 
-17)Create UserService, ItemService as spring services
+17)++Create UserService, ItemService as spring services
 
-18)Create AuthenticationService as spring service
+18)++Create AuthenticationService as spring service
 
-19)Update main.jsp to receive 'user' object and show correct buttons - sign in or profile/exit/add new item (with help of jstl's if and forEach)
+19)++Update main.jsp to receive 'user' object and show correct buttons - sign in or profile/exit/add new item (with help of jstl's if and forEach)
 
-20)Update MainController to place 'user' object from session to the model
+20)++Update MainController to place 'user' object from session to the model
 
 21)Write code in RegisterController's post-mapped method witch registers a new user
 
