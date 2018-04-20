@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
+import service.AuthenticationService;
 
 @Controller
 public class MainController {
@@ -21,11 +22,16 @@ public class MainController {
     
     @Autowired
     private UserService userService;
+    
+    @Autowired
+    private AuthenticationService authenticationService;
 
     @RequestMapping(name = MAIN_URL, method = RequestMethod.GET)
     public ModelAndView main(HttpServletRequest request,
             @RequestParam(name = EXIT, required = false) String exit) {
+        
         User user = userService.getUserFromSession(request.getSession());
+        authenticationService.removeUserAttributeFromSession(exit, request.getSession());
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName(MAIN);
         modelAndView.addObject(USER, user);

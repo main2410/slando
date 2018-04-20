@@ -65,7 +65,7 @@ Project created, configured;
 
 21)++Write code in RegisterController's post-mapped method witch registers a new user
 
-22)Update MainController to do exit
+22)++Update MainController to do exit
 
 23)Write code in LoginController's post-mapped method to log in a user ('user' object in session's attribute)
 
