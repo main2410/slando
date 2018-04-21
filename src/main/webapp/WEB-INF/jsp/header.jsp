@@ -38,6 +38,17 @@
                                 ADD ADVERTISEMENT</span>
                         </a>
                     </div>
+                    <div style="height: 50px;
+                         margin-top: 20px;
+                         margin-left: 30px;
+                         background-color: #ff8300;
+                         color: white;
+                         padding: 0 10px;
+                         border-radius: 15px;">
+                        <a href="/main?exit=true" style="text-decoration: none;">
+                            <span class="addText" style="color: white; position: relative;top: 15px; ">EXIT</span>
+                        </a>
+                    </div>
                 </c:if>
                 <c:if test="${user == null}">
                     <div class="addOrSignIn" style="height: 40px;
@@ -62,17 +73,7 @@
                             <span class="addText" style="color: white; position: relative;top: 12px; ">SIGN IN</span>
                         </a>
                     </div>
-                    <div class="addOrSignIn" style="height: 40px;
-                         margin-top: 20px;
-                         margin-left: 30px;
-                         background-color: #ff8300;
-                         color: white;
-                         padding: 0 10px;
-                         border-radius: 15px;">
-                        <a href="/main?exit=true" style="text-decoration: none;">
-                            <span class="addText" style="color: white; position: relative;top: 12px; ">EXIT</span>
-                        </a>
-                    </div>
+
                 </c:if>
 
             </div>

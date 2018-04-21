@@ -67,7 +67,7 @@ Project created, configured;
 
 22)++Update MainController to do exit
 
-23)Write code in LoginController's post-mapped method to log in a user ('user' object in session's attribute)
+23)++Write code in LoginController's post-mapped method to log in a user ('user' object in session's attribute)
 
 24)Write logic in MainController to put 'items' into the model
 

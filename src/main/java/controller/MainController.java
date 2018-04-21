@@ -29,9 +29,8 @@ public class MainController {
     @RequestMapping(name = MAIN_URL, method = RequestMethod.GET)
     public ModelAndView main(HttpServletRequest request,
             @RequestParam(name = EXIT, required = false) String exit) {
-        
-        User user = userService.getUserFromSession(request.getSession());
         authenticationService.removeUserAttributeFromSession(exit, request.getSession());
+        User user = userService.getUserFromSession(request.getSession());
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName(MAIN);
         modelAndView.addObject(USER, user);

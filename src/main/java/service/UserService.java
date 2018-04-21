@@ -9,20 +9,20 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
-    
+
     private static final String USER = "user";
-    
+
     @Autowired
     private UserDao userDao;
-    
-    public User getUserFromSession(HttpSession session){
-        return (User)session.getAttribute(USER);
+
+    public User getUserFromSession(HttpSession session) {
+        return (User) session.getAttribute(USER);
     }
-    
-    public boolean register(String login, String pass1, String pass2, String phone, String email, String city){
-        if(pass1.equals(pass2)){
+
+    public boolean register(String login, String pass1, String pass2, String phone, String email, String city) {
+        if (pass1.equals(pass2)) {
             User user = userDao.getByLogin(login);
-            if(user==null){
+            if (user == null) {
                 userDao.add(User.builder().
                         login(login).
                         pass(pass2).
@@ -34,5 +34,18 @@ public class UserService {
             }
         }
         return false;
+    }
+
+    public boolean login(String login, String pass, HttpSession session) {
+        User u = userDao.getByLogin(login);
+        if (pass.equals(u.getPass())) {
+            session.setAttribute(USER, u);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isLoginedUser(HttpSession session) {
+        return getUserFromSession(session) != null;
     }
 }
