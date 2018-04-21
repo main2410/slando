@@ -5,7 +5,7 @@
         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
         <link rel="stylesheet" href="css/style.css" type="text/css"/>
     </head>
-    <body>
+    <body style="font-family: arial;">
         <div class="header_top"
              style="display: flex;justify-content: space-between; padding-left: 50px; border-bottom:1.5px solid #d7d4d4;">
             <div>
