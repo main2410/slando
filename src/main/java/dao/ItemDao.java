@@ -4,11 +4,16 @@ import entity.Item;
 import org.hibernate.Session;
 
 import java.util.List;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ItemDao extends Dao {
 
     public List<Item> get() {
-        return getDataByQuery("SELECT * FROM slando_item");
+        Session s = openSessionAndBeginTransaction();
+        List<Item> out = s.createCriteria(Item.class).list();
+        commitTransactionAndCloseSession(s);
+        return out;
     }
 
     public List<Item> getById(String id) {

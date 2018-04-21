@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,7 +30,11 @@ public class RegisterController {
     private UserService userService;
 
     @GetMapping
-    public ModelAndView defaultView() {
+    public ModelAndView defaultView(HttpServletRequest request,
+            HttpServletResponse response) throws IOException {
+        if(userService.isLoginedUser(request.getSession())){
+            response.sendRedirect(MAIN_PAGE);
+        }
         ModelAndView mav = new ModelAndView(REGISTER);
         return mav;
     }

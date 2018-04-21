@@ -4,9 +4,32 @@
     <jsp:param name="title" value="Slando"/>
 </jsp:include>
 
-<div class="content" style="background-color: #f7f7f7; height: 600px;">
-    CONTENT
-</div>
+<c:forEach items="${items}" var="item">
+    <div style="background-color: #f0f0f0;">
+        <h1 style="margin-top: 0px;text-align: center;">${item.name}</h1>
+        <div style=" display: flex; justify-content: space-around;">
+            <div>
+                <img src="${item.pic}">
+            </div>
+            <div>
+                <span>Description:</span></br>
+                <span>${item.about}</span>
+            </div>
+            <div>
+                <p>Owner: ${item.owner}</p>
+                <p>Phone: ${item.phone}</p>
+                <p>Email: ${item.email}</p>
+                <p>City: ${item.city}</p>        
+            </div>
+        </div>
+        <div style="display: flex; justify-content: space-around;">
+            <span>Price: ${item.price} UAH</span>
+            <span>Created:</span>
+        </div>
+    </div>  
+</c:forEach>
+
+
 
 <jsp:include page="footer.jsp">
     <jsp:param name="counter" value="${counter}"></jsp:param>

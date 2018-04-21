@@ -1,5 +1,6 @@
 package controller;
 
+import dao.ItemDao;
 import entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,10 +20,12 @@ public class MainController {
     private static final String MAIN = "main";
     private static final String EXIT = "exit";
     private static final String USER = "user";
+    private static final String ITEMS = "items";
     
     @Autowired
     private UserService userService;
-    
+    @Autowired
+    private ItemDao itemDao;    
     @Autowired
     private AuthenticationService authenticationService;
 
@@ -30,11 +33,12 @@ public class MainController {
     public ModelAndView main(HttpServletRequest request,
             @RequestParam(name = EXIT, required = false) String exit) {
         
-        User user = userService.getUserFromSession(request.getSession());
         authenticationService.removeUserAttributeFromSession(exit, request.getSession());
+        User user = userService.getUserFromSession(request.getSession());
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName(MAIN);
         modelAndView.addObject(USER, user);
+        modelAndView.addObject(ITEMS, itemDao.get());
         return modelAndView;
     }
 }
