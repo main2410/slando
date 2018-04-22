@@ -33,9 +33,9 @@
                          color: white;
                          padding: 0 10px;
                          border-radius: 15px;">
-                        <a href="/" style="text-decoration: none;">
+                        <a href="/additem" style="text-decoration: none;">
                             <span class="addText" style="color: white; position: relative;top: 15px;">
-                                ADD ADVERTISEMENT</span>
+                                ADD ITEM</span>
                         </a>
                     </div>
                     <div style="height: 50px;

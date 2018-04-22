@@ -77,9 +77,9 @@ Project created, configured;
 
 27)Create logic in main.jsp and MainController to search items by keyword (input text field and search button)
 
-28)Create add.jsp
+28)++Create add.jsp
 
-29)Create AddController to add new item (for logined users only)
+29)++Create AddController to add new item (for logined users only)
 
 30)Create edit.jsp to edit item's parameters, remove item
 
@@ -93,7 +93,7 @@ Project created, configured;
 
 35)Create SessionListener witch will decrement counter(s) when session destroyed
 
-36)Create TINYINT 'vip' field in Item and slando_item table
+36)++Create TINYINT 'vip' field in Item and slando_item table
 
 37)Create logic in edit.jsp and EditController to do additional operations (up to top, set vip)
 

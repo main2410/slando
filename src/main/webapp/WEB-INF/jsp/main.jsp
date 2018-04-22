@@ -9,11 +9,11 @@
         <h1 style="margin-top: 0px;text-align: center;">${item.name}</h1>
         <div style=" display: flex; justify-content: space-around;">
             <div>
-                <img src="${item.pic}">
+                <img src="${item.pic}" height="150">
             </div>
             <div>
                 <span>Description:</span></br>
-                <span>${item.about}</span>
+                <span>${item.about}</span></br>
             </div>
             <div>
                 <p>Owner: ${item.owner}</p>
@@ -24,7 +24,8 @@
         </div>
         <div style="display: flex; justify-content: space-around;">
             <span>Price: ${item.price} UAH</span>
-            <span>Created:</span>
+            <span>Category: ${item.cat}</span>
+            <span>Created: ${item.createDate}</span>
         </div>
     </div>  
 </c:forEach>
