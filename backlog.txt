@@ -73,9 +73,9 @@ Project created, configured;
 
 25)++Write logic in main.jsp to show 'items'
 
-26)Create logic in main.jsp and MainController to search items by category (dropdown list and search button)
+26)++Create logic in main.jsp and MainController to search items by category (dropdown list and search button)
 
-27)Create logic in main.jsp and MainController to search items by keyword (input text field and search button)
+27)++Create logic in main.jsp and MainController to search items by keyword (input text field and search button)
 
 28)++Create add.jsp
 

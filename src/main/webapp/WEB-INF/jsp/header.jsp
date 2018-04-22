@@ -14,6 +14,17 @@
                          src="http://i.piccy.info/i9/e1f7d32a0726d078973c80f1fe8de0dc/1524063572/30517/1238229/Logo_Slando.jpg"
                          height="90px">
                 </a>
+                <form action='/main'>
+                    Search Items: <input name='q'/>
+                    <select name='cat'>
+                        <option value="">AllCat</option>
+                        <option value="Cat1">Cat1</option>
+                        <option value="Cat2">Cat2</option>
+                        <option value="Cat3">Cat3</option>
+                        <option value="Cat4">Cat4</option>
+                    </select>
+                    <input type='submit' value='Search'/>
+                </form>
             </div>
             <div class="isLogin" style="display: flex; justify-content: space-between;">
                 <c:if test="${user != null}">

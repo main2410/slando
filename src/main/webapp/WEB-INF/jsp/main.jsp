@@ -6,7 +6,8 @@
 
 <c:forEach items="${items}" var="item">
     <div style="background-color: #f0f0f0;">
-        <h1 style="margin-top: 0px;text-align: center;">${item.name}</h1>
+        <a href='/item?id=${item.id}'>
+            <h1 style="margin-top: 0px;text-align: center;"> ${item.name}</h1></a>
         <div style=" display: flex; justify-content: space-around;">
             <div>
                 <img src="${item.pic}" height="150">
