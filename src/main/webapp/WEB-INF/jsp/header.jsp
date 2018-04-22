@@ -18,10 +18,10 @@
                     Search Items: <input name='q'/>
                     <select name='cat'>
                         <option value="">AllCat</option>
-                        <option value="Cat1">Cat1</option>
-                        <option value="Cat2">Cat2</option>
-                        <option value="Cat3">Cat3</option>
-                        <option value="Cat4">Cat4</option>
+                        <option value="kitchen">Kitchen</option>
+                        <option value="bath">Bath</option>
+                        <option value="bedroom">Bedroom</option>
+                        <option value="outhouse">Outhouse</option>
                     </select>
                     <input type='submit' value='Search'/>
                 </form>
