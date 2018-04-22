@@ -18,7 +18,7 @@ public class ItemDao extends Dao {
     }
 
     public List<Item> getById(String id) {
-        return getDataByQuery("SELECT * FROM slando_item WHERE id=" + id);
+        return getDataByQuery("FROM Item WHERE id='" + id + "'");
     }
 
     public void add(Item i) {

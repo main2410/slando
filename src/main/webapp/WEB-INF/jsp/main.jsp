@@ -28,7 +28,8 @@
             <span>Category: ${item.cat}</span>
             <span>Created: ${item.createDate}</span>
         </div>
-    </div>  
+    </div>
+    <hr/>
 </c:forEach>
 
 
