@@ -14,6 +14,17 @@
                          src="http://i.piccy.info/i9/e1f7d32a0726d078973c80f1fe8de0dc/1524063572/30517/1238229/Logo_Slando.jpg"
                          height="90px">
                 </a>
+                <form action='/main'>
+                    Search Items: <input name='q'/>
+                    <select name='cat'>
+                        <option value="">AllCat</option>
+                        <option value="kitchen">Kitchen</option>
+                        <option value="bath">Bath</option>
+                        <option value="bedroom">Bedroom</option>
+                        <option value="outhouse">Outhouse</option>
+                    </select>
+                    <input type='submit' value='Search'/>
+                </form>
             </div>
             <div class="isLogin" style="display: flex; justify-content: space-between;">
                 <c:if test="${user != null}">
@@ -33,9 +44,9 @@
                          color: white;
                          padding: 0 10px;
                          border-radius: 15px;">
-                        <a href="/" style="text-decoration: none;">
+                        <a href="/additem" style="text-decoration: none;">
                             <span class="addText" style="color: white; position: relative;top: 15px;">
-                                ADD ADVERTISEMENT</span>
+                                ADD ITEM</span>
                         </a>
                     </div>
                     <div style="height: 50px;
