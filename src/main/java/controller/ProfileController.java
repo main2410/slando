@@ -53,7 +53,7 @@ public class ProfileController {
                          @RequestParam(name = EMAIL, required = false) String email,
                          @RequestParam(name = CITY, required = false) String city) throws IOException {
         User u = userService.getUserFromSession(request.getSession());
-        userService.changeProgfile(u, oldPass, pass1, pass2, phone, email, city);
+        userService.changeProfile(u, oldPass, pass1, pass2, phone, email, city);
         response.sendRedirect(PROFILE_PAGE);
     }
 
