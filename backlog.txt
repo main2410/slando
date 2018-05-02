@@ -81,9 +81,9 @@ Project created, configured;
 
 29)++Create AddController to add new item (for logined users only)
 
-30)Create edit.jsp to edit item's parameters, remove item
+30)++Create edit.jsp to edit item's parameters, remove item
 
-31)Create EditController (for item's owner only)
+31)++Create EditController (for item's owner only)
 
 32)++Create profile.jsp
 

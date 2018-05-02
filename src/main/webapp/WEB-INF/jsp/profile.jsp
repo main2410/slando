@@ -48,6 +48,9 @@
     </table>
     <input type='submit' value='Save changes'/>
 </form>
+<a href='/main?owner=${user.login}'>
+    <input type='submit' value='My items'/>
+</a>
 
 <jsp:include page="footer.jsp">
     <jsp:param name="counter" value="${counter}"></jsp:param>

@@ -46,12 +46,35 @@ public class ItemDao extends Dao {
         return items;
     }
 
+    public List<Item> getByOwner(String owner) {
+        List<Item> items = new LinkedList<>();
+        if (owner.length() > 0) {
+            for (Item item : get()) {
+                if (item.getOwner().equals(owner)) {
+                    items.add(item);
+                }
+            }
+        }
+        return items;
+    }
 
     private List<Item> getDataByQuery(String query) {
         Session s = openSessionAndBeginTransaction();
         List<Item> out = s.createQuery(query).list();
         commitTransactionAndCloseSession(s);
         return out;
+    }
+
+    public void update(Item i) {
+        Session s = openSessionAndBeginTransaction();
+        s.update(i);
+        commitTransactionAndCloseSession(s);
+    }
+
+    public void delete(Item i) {
+        Session s = openSessionAndBeginTransaction();
+        s.delete(i);
+        commitTransactionAndCloseSession(s);
     }
 
 }
