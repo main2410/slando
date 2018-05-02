@@ -29,7 +29,7 @@
             <div class="isLogin" style="display: flex; justify-content: space-between;">
                 <c:if test="${user != null}">
                     <div class="myProfile" style="padding-top: 25px;">
-                        <a href="/" style="text-decoration: none;">
+                        <a href="/profile" style="text-decoration: none;">
                             <img src="http://i.piccy.info/i9/f1b1569fe688b700a48766884c430bb0/1524063907/6574/1238229/customer_256.png"
                                  height="40px">
                             <span class="profile" style="position: relative;bottom: 15px; ">

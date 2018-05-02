@@ -85,9 +85,9 @@ Project created, configured;
 
 31)Create EditController (for item's owner only)
 
-32)Create profile.jsp
+32)++Create profile.jsp
 
-33)Create ProfileController to change user's settings (for logined users only)
+33)++Create ProfileController to change user's settings (for logined users only)
 
 34)Create counter witch shows how many logined users on the site, how many users on site (two counter variables)
 

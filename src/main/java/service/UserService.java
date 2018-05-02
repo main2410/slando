@@ -48,4 +48,24 @@ public class UserService {
     public boolean isLoginedUser(HttpSession session) {
         return getUserFromSession(session) != null;
     }
+
+    public void changeProgfile (User u, String oldPass, String pass1,
+                                String pass2, String phone, String email, String city) {
+        if (u != null) {
+            if (u.getPass().equals(oldPass) && pass1 != null && pass1.equals(pass2)){
+                u.setPass(pass2);
+            }
+            if (phone != null && !phone.equals("")) {
+                u.setPhone(phone);
+            }
+            if (email != null && !email.equals("")) {
+                u.setEmail(email);
+            }
+            if (city != null && !city.equals("")) {
+                u.setCity(city);
+            }
+            userDao.update(u);
+        }
+    }
+
 }
