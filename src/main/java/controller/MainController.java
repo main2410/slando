@@ -24,6 +24,7 @@ public class MainController {
     private static final String QUERY = "q";
     private static final String CAT = "cat";
     private static final String ID = "id";
+    private static final String OWNER = "owner";
 
     @Autowired
     private UserService userService;
@@ -37,22 +38,24 @@ public class MainController {
                              @RequestParam(name = EXIT, required = false) String exit,
                              @RequestParam(name = ID, required = false) String id,
                              @RequestParam(name = QUERY, required = false) String q,
-                             @RequestParam(name = CAT, required = false) String cat) {
+                             @RequestParam(name = CAT, required = false) String cat,
+                             @RequestParam(name = OWNER, required = false) String owner) {
 
         authenticationService.removeUserAttributeFromSession(exit, request.getSession());
         User user = userService.getUserFromSession(request.getSession());
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName(MAIN);
         modelAndView.addObject(USER, user);
-        if (q == null && cat == null && id == null) {
-            modelAndView.addObject(ITEMS, itemDao.get());
+        if (owner != null) {
+            modelAndView.addObject(ITEMS, itemDao.getByOwner(owner));
+        } else if (id != null) {
+            modelAndView.addObject(ITEMS, itemDao.getById(id));
+        } else if (q != null || cat != null) {
+            modelAndView.addObject(ITEMS, itemDao.getByNameOrCat(q, cat));
         } else {
-            if (id == null) {
-                modelAndView.addObject(ITEMS, itemDao.getByNameOrCat(q, cat));
-            } else {
-                modelAndView.addObject(ITEMS, itemDao.getById(id));
-            }
+            modelAndView.addObject(ITEMS, itemDao.get());
         }
+        modelAndView.addObject(OWNER, owner);
         return modelAndView;
     }
 }

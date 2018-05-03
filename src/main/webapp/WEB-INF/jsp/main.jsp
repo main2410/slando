@@ -7,7 +7,8 @@
 <c:forEach items="${items}" var="item">
     <div style="background-color: #f0f0f0;">
         <a href='/item?id=${item.id}'>
-            <h1 style="margin-top: 0px;text-align: center;"> ${item.name}</h1></a>
+            <h1 style="margin-top: 0px;text-align: center;"> ${item.name}</h1>
+        </a>
         <div style=" display: flex; justify-content: space-around;">
             <div>
                 <img src="${item.pic}" height="150">
@@ -28,11 +29,14 @@
             <span>Category: ${item.cat}</span>
             <span>Created: ${item.createDate}</span>
         </div>
+        <c:if test="${item.owner == user.login && owner != null}">
+            <a href='/edit?id=${item.id}'>
+                <input type='submit' value='Edit item'/>
+            </a>
+        </c:if>
     </div>
     <hr/>
 </c:forEach>
-
-
 
 <jsp:include page="footer.jsp">
     <jsp:param name="counter" value="${counter}"></jsp:param>

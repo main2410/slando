@@ -49,7 +49,7 @@ public class UserService {
         return getUserFromSession(session) != null;
     }
 
-    public void changeProgfile (User u, String oldPass, String pass1,
+    public void changeProfile (User u, String oldPass, String pass1,
                                 String pass2, String phone, String email, String city) {
         if (u != null) {
             if (u.getPass().equals(oldPass) && pass1 != null && pass1.equals(pass2)){
