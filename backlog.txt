@@ -99,8 +99,8 @@ Project created, configured;
 
 38)Create logic in main.jsp and MainController to show 3 vip items in one line in top of all items
 
-39)Create caching for items. Your logic will updates cache every 1 minute (in single thread)
+39)++Create caching for items. Your logic will updates cache every 1 minute (in single thread)
 
-40)Create ItemCacheDao witch will works with cached items.
+40)++Create ItemCacheDao witch will works with cached items.
 
-41)Change logic everywhere to work with ItemCacheDao (not with ItemDao itself)
+41)++Change logic everywhere to work with ItemCacheDao (not with ItemDao itself)

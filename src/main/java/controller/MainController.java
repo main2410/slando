@@ -1,6 +1,6 @@
 package controller;
 
-import dao.ItemDao;
+import dao.ItemCacheDao;
 import entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,7 +29,7 @@ public class MainController {
     @Autowired
     private UserService userService;
     @Autowired
-    private ItemDao itemDao;
+    private ItemCacheDao itemCacheDao;
     @Autowired
     private AuthenticationService authenticationService;
 
@@ -47,13 +47,13 @@ public class MainController {
         modelAndView.setViewName(MAIN);
         modelAndView.addObject(USER, user);
         if (owner != null) {
-            modelAndView.addObject(ITEMS, itemDao.getByOwner(owner));
+            modelAndView.addObject(ITEMS, itemCacheDao.getByOwner(owner));
         } else if (id != null) {
-            modelAndView.addObject(ITEMS, itemDao.getById(id));
+            modelAndView.addObject(ITEMS, itemCacheDao.getById(id));
         } else if (q != null || cat != null) {
-            modelAndView.addObject(ITEMS, itemDao.getByNameOrCat(q, cat));
+            modelAndView.addObject(ITEMS, itemCacheDao.getByNameOrCat(q, cat));
         } else {
-            modelAndView.addObject(ITEMS, itemDao.get());
+            modelAndView.addObject(ITEMS, itemCacheDao.get());
         }
         modelAndView.addObject(OWNER, owner);
         return modelAndView;

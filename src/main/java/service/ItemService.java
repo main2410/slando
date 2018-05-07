@@ -1,6 +1,6 @@
 package service;
 
-import dao.ItemDao;
+import dao.ItemCacheDao;
 import entity.Item;
 import entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +13,11 @@ import java.util.List;
 public class ItemService {
 
     @Autowired
-    private ItemDao itemDao;
+    private ItemCacheDao itemCacheDao;
 
     public void addItem(String cat, String name, String about, Integer price, String pic, User u) {
 
-        itemDao.add(Item.builder().
+        itemCacheDao.add(Item.builder().
                 cat(cat).
                 name(name).
                 about(about).
@@ -35,7 +35,7 @@ public class ItemService {
         Item item = new Item();
         List<Item> items = new LinkedList<Item>();
         if (id != null) {
-            items = itemDao.getById(id);
+            items = itemCacheDao.getById(id);
         }
         if (items.size() > 0) {
             item = items.get(0);
@@ -61,12 +61,12 @@ public class ItemService {
             if (price != null) {
                 item.setPrice(price);
             }
-            itemDao.update(item);
+            itemCacheDao.update(item);
         }
     }
 
     public void deleteItem (Item item) {
-        itemDao.delete(item);
+        itemCacheDao.delete(item);
     }
 
 }
