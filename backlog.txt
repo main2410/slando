@@ -63,33 +63,44 @@ Project created, configured;
 
 20)++Update MainController to place 'user' object from session to the model
 
-21)Write code in RegisterController's post-mapped method witch registers a new user
+21)++Write code in RegisterController's post-mapped method witch registers a new user
 
-22)Update MainController to do exit
+22)++Update MainController to do exit
 
-23)Write code in LoginController's post-mapped method to log in a user ('user' object in session's attribute)
+23)++Write code in LoginController's post-mapped method to log in a user ('user' object in session's attribute)
 
-24)Create logic in main.jsp and MainController to search items by category (dropdown list and search button)
+24)++Write logic in MainController to put 'items' into the model
 
-25)Create logic in main.jsp and MainController to search items by keyword (input text field and search button)
+25)++Write logic in main.jsp to show 'items'
 
-26)Create add.jsp
+26)++Create logic in main.jsp and MainController to search items by category (dropdown list and search button)
 
-27)Create AddController to add new item (for logined users only)
+27)++Create logic in main.jsp and MainController to search items by keyword (input text field and search button)
 
-28)Create edit.jsp to edit item's parameters, remove item
+28)++Create add.jsp
 
-29)Create EditController (for item's owner only)
+29)++Create AddController to add new item (for logined users only)
 
-30)Create profile.jsp
+30)++Create edit.jsp to edit item's parameters, remove item
 
-31)Create ProfileController to change user's settings (for logined users only)
+31)++Create EditController (for item's owner only)
 
-32)Create counter witch shows how many logined users on the site, how many users on site (two counter variables)
-  32.1)Create SessionListener witch will decrement counter(s) when session destroyed
+32)++Create profile.jsp
 
-33)Create TINYINT 'vip' field in Item and slando_item table
+33)++Create ProfileController to change user's settings (for logined users only)
 
-34)Create logic in edit.jsp and EditController to do additional operations (up to top, set vip)
+34)Create counter witch shows how many logined users on the site, how many users on site (two counter variables)
 
-35)Create logic in main.jsp and MainController to show 3 vip items in one line in top of all items
+35)Create SessionListener witch will decrement counter(s) when session destroyed
+
+36)++Create TINYINT 'vip' field in Item and slando_item table
+
+37)Create logic in edit.jsp and EditController to do additional operations (up to top, set vip)
+
+38)Create logic in main.jsp and MainController to show 3 vip items in one line in top of all items
+
+39)++Create caching for items. Your logic will updates cache every 1 minute (in single thread)
+
+40)++Create ItemCacheDao witch will works with cached items.
+
+41)++Change logic everywhere to work with ItemCacheDao (not with ItemDao itself)
