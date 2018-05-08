@@ -33,6 +33,10 @@ public class MainController {
     @Autowired
     private AuthenticationService authenticationService;
 
+    public MainController() {
+
+    }
+
     @RequestMapping(name = MAIN_URL, method = RequestMethod.GET)
     public ModelAndView main(HttpServletRequest request,
                              @RequestParam(name = EXIT, required = false) String exit,
