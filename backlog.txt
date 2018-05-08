@@ -104,3 +104,11 @@ Project created, configured;
 40)++Create ItemCacheDao witch will works with cached items.
 
 41)++Change logic everywhere to work with ItemCacheDao (not with ItemDao itself)
+
+42)Refactor controllers to work with services
+
+43)Tests for all controllers (after 42)
+
+44)Tests for all services (after 42)
+
+45)Create constants.StringConstants class with all public String constants for all project
