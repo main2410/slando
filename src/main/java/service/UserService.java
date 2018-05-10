@@ -2,15 +2,19 @@ package service;
 
 import dao.UserDao;
 import entity.User;
-import java.sql.Timestamp;
-import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.servlet.http.HttpSession;
+import java.sql.Timestamp;
 
 @Service
 public class UserService {
 
     private static final String USER = "user";
+
+//    @Autowired
+//    private UserRepository userRepository;
 
     @Autowired
     private UserDao userDao;
@@ -30,6 +34,13 @@ public class UserService {
                         email(email).
                         city(city).
                         createDate(new Timestamp(System.currentTimeMillis())).build());
+//                userRepository.save(User.builder().
+//                        login(login).
+//                        pass(pass2).
+//                        phone(phone).
+//                        email(email).
+//                        city(city).
+//                        createDate(new Timestamp(System.currentTimeMillis())).build());
                 return true;
             }
         }
