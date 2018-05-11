@@ -1,5 +1,6 @@
 package service;
 
+import counter.LoginedCounter;
 import dao.UserDao;
 import entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,9 @@ import java.sql.Timestamp;
 
 @Service
 public class UserService {
+    
+    @Autowired
+    private LoginedCounter loginedCounter;
 
     private static final String USER = "user";
 
@@ -51,6 +55,7 @@ public class UserService {
         User u = userDao.getByLogin(login);
         if (pass.equals(u.getPass())) {
             session.setAttribute(USER, u);
+            loginedCounter.increment();
             return true;
         }
         return false;

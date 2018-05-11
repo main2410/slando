@@ -1,5 +1,7 @@
 package controller;
 
+import counter.LoginedCounter;
+import counter.OnlineCounter;
 import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,9 +27,15 @@ public class RegisterController {
     private static final String CITY = "city";
     private static final String MAIN_PAGE = "/main";
     private static final String REGISTER_PAGE = "/register";
+    private static final String ONLINE_COUNTER = "onlineCounter";
+    private static final String LOGINED_COUNTER = "loginedCounter";
     
     @Autowired
     private UserService userService;
+     @Autowired
+    private OnlineCounter onlineCounter;
+    @Autowired
+    private LoginedCounter loginedCounter;
 
     @GetMapping
     public ModelAndView defaultView(HttpServletRequest request,
@@ -36,6 +44,8 @@ public class RegisterController {
             response.sendRedirect(MAIN_PAGE);
         }
         ModelAndView mav = new ModelAndView(REGISTER);
+        mav.addObject(ONLINE_COUNTER, onlineCounter);
+        mav.addObject(LOGINED_COUNTER, loginedCounter);
         return mav;
     }
 

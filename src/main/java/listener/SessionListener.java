@@ -20,7 +20,6 @@ public class SessionListener {
     @EventListener
     public void handleSessionCreated(HttpSessionCreatedEvent event) {
         onlineCounter.increment();
-        System.out.println(onlineCounter.get());
     }
     
     @EventListener

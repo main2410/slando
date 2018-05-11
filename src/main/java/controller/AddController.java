@@ -1,5 +1,7 @@
 package controller;
 
+import counter.LoginedCounter;
+import counter.OnlineCounter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,11 +30,17 @@ public class AddController {
     private static final String PIC = "pic";
     private static final String MAIN_PAGE = "/main";
 //    private static final String ADD_ITEM_PAGE = "/additem";
+    private static final String ONLINE_COUNTER = "onlineCounter";
+    private static final String LOGINED_COUNTER = "loginedCounter";
 
     @Autowired
     private UserService userService;
     @Autowired
     private ItemService itemService;
+     @Autowired
+    private OnlineCounter onlineCounter;
+    @Autowired
+    private LoginedCounter loginedCounter;
 
     @GetMapping
     public ModelAndView defaultView(HttpServletRequest request,
@@ -41,6 +49,8 @@ public class AddController {
             response.sendRedirect(MAIN_PAGE);
         }
         ModelAndView mav = new ModelAndView(ADDITEM);
+        mav.addObject(ONLINE_COUNTER, onlineCounter);
+        mav.addObject(LOGINED_COUNTER, loginedCounter);
         return mav;
     }
 
