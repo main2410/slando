@@ -1,5 +1,7 @@
 package controller;
 
+import counter.LoginedCounter;
+import counter.OnlineCounter;
 import dao.ItemCacheDao;
 import entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,8 @@ public class MainController {
     private static final String CAT = "cat";
     private static final String ID = "id";
     private static final String OWNER = "owner";
+    private static final String ONLINE_COUNTER = "onlineCounter";
+    private static final String LOGINED_COUNTER = "loginedCounter";
 
     @Autowired
     private UserService userService;
@@ -32,6 +36,10 @@ public class MainController {
     private ItemCacheDao itemCacheDao;
     @Autowired
     private AuthenticationService authenticationService;
+    @Autowired
+    private OnlineCounter onlineCounter;
+    @Autowired
+    private LoginedCounter loginedCounter;
 
     public MainController() {
 
@@ -39,27 +47,29 @@ public class MainController {
 
     @RequestMapping(name = MAIN_URL, method = RequestMethod.GET)
     public ModelAndView main(HttpServletRequest request,
-                             @RequestParam(name = EXIT, required = false) String exit,
-                             @RequestParam(name = ID, required = false) String id,
-                             @RequestParam(name = QUERY, required = false) String q,
-                             @RequestParam(name = CAT, required = false) String cat,
-                             @RequestParam(name = OWNER, required = false) String owner) {
+            @RequestParam(name = EXIT, required = false) String exit,
+            @RequestParam(name = ID, required = false) String id,
+            @RequestParam(name = QUERY, required = false) String q,
+            @RequestParam(name = CAT, required = false) String cat,
+            @RequestParam(name = OWNER, required = false) String owner) {
 
-        authenticationService.removeUserAttributeFromSession(exit, request.getSession());
+        authenticationService.removeUserIfExitPressed(exit, request.getSession());
         User user = userService.getUserFromSession(request.getSession());
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName(MAIN);
-        modelAndView.addObject(USER, user);
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName(MAIN);
+        mav.addObject(USER, user);
         if (owner != null) {
-            modelAndView.addObject(ITEMS, itemCacheDao.getByOwner(owner));
+            mav.addObject(ITEMS, itemCacheDao.getByOwner(owner));
         } else if (id != null) {
-            modelAndView.addObject(ITEMS, itemCacheDao.getById(id));
+            mav.addObject(ITEMS, itemCacheDao.getById(id));
         } else if (q != null || cat != null) {
-            modelAndView.addObject(ITEMS, itemCacheDao.getByNameOrCat(q, cat));
+            mav.addObject(ITEMS, itemCacheDao.getByNameOrCat(q, cat));
         } else {
-            modelAndView.addObject(ITEMS, itemCacheDao.get());
+            mav.addObject(ITEMS, itemCacheDao.get());
         }
-        modelAndView.addObject(OWNER, owner);
-        return modelAndView;
+        mav.addObject(OWNER, owner);
+        mav.addObject(ONLINE_COUNTER, onlineCounter);
+        mav.addObject(LOGINED_COUNTER, loginedCounter);
+        return mav;
     }
 }
