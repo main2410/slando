@@ -3,13 +3,11 @@ package dao;
 import entity.Item;
 import org.hibernate.Session;
 import org.springframework.stereotype.Service;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
+
+import java.util.*;
 
 @Service
-public class ItemCacheDao  extends Dao {
+public class ItemCacheDao extends Dao {
 
     private List<Item> items = null;
     private Timer timer = new Timer();
@@ -19,10 +17,11 @@ public class ItemCacheDao  extends Dao {
         timer.schedule(new CacheUpdater(), 20000, 20000);
     }
 
-    public void updateItemCache() {
+    private void updateItemCache() {
         Session s = openSessionAndBeginTransaction();
         items = s.createCriteria(Item.class).list();
         commitTransactionAndCloseSession(s);
+        sort(items);
     }
 
     public List<Item> get() {
@@ -30,7 +29,7 @@ public class ItemCacheDao  extends Dao {
     }
 
     public List<Item> getById(String id) {
-        List<Item> out = new LinkedList<Item>();
+        List<Item> out = new LinkedList<>();
         if (items != null && id != null) {
             for (Item item : items) {
                 if (item.getId().equals(id)) {
@@ -42,7 +41,7 @@ public class ItemCacheDao  extends Dao {
     }
 
     public List<Item> getByNameOrCat(String q, String cat) {
-        List<Item> out = new LinkedList<Item>();
+        List<Item> out = new LinkedList<>();
         if (items != null && q != null && q.length() > 2) {
             for (Item item : items) {
                 if (item.getName().contains(q)) {
@@ -60,7 +59,7 @@ public class ItemCacheDao  extends Dao {
     }
 
     public List<Item> getByOwner(String owner) {
-        List<Item> out = new LinkedList<Item>();
+        List<Item> out = new LinkedList<>();
         if (items != null && owner != null && owner.length() > 0) {
             for (Item item : items) {
                 if (item.getOwner().equals(owner)) {
@@ -98,4 +97,16 @@ public class ItemCacheDao  extends Dao {
 
     }
 
+    private void sort(List<Item> items) {
+        Collections.sort(items, (item1, item2) ->
+                item2.getCreateDate().compareTo(item1.getCreateDate()));
+        List vip = new LinkedList();
+        for (Item item : items) {
+            if (item.getIsVip() && vip.size() < 2) {
+                vip.add(item);
+            }
+        }
+        items.removeAll(vip);
+        items.addAll(0, vip);
+    }
 }

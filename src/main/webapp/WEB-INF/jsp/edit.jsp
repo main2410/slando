@@ -4,53 +4,19 @@
 </jsp:include>
 
 <form action='/edit?id=${item.id}' method='POST'>
-    <table>
-        <tr>
-            <td>
-                Item category:
-            </td>
-            <td>
-                <select name='cat' value='${item.cat}'>
-                    <option value="kitchen">Kitchen</option>
-                    <option value="bath">Bath</option>
-                    <option value="bedroom">Bedroom</option>
-                    <option value="outhouse">Outhouse</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Item name:
-            </td>
-            <td>
-                <input name='name' value='${item.name}'/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                About:
-            </td>
-            <td>
-                <input name='about' value='${item.about}'/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Picture url:
-            </td>
-            <td>
-                <input name='pic' value='${item.pic}'/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Item price:
-            </td>
-            <td>
-                <input name='price' value='${item.price}'/>
-            </td>
-        </tr>
-    </table>
+    Item category: <select name='cat' title="Select new Category">
+    <option value="kitchen">Kitchen</option>
+    <option value="bath">Bath</option>
+    <option value="bedroom">Bedroom</option>
+    <option value="outhouse">Outhouse</option>
+</select><br/>
+    Item name: <input name='name' value='${item.name}'/><br/>
+    About: <input name='about' value='${item.about}'/><br/>
+    Picture url: <input name='pic' value='${item.pic}'/><br/>
+    Item price: <input name='price' value='${item.price}'/><br/>
+    Make VIP <input type="checkbox" name='isVip'
+<c:if test="${item.isVip}"> checked </c:if> value="true"><br>
+    Set TOP <input type="checkbox" name='top' value="true"><br>
     <input type='submit' value='Save changes'/>
 </form>
 <form action='/edit?id=${item.id}&delete=true' method='POST'>
