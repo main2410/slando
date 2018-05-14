@@ -53,5 +53,6 @@
 </a>
 
 <jsp:include page="footer.jsp">
-    <jsp:param name="counter" value="${counter}"></jsp:param>
+    <jsp:param name="onlineCounter" value="${onlineCounter}"></jsp:param>
+    <jsp:param name="loginedCounter" value="${loginedCounter}"></jsp:param>
 </jsp:include>

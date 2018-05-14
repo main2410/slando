@@ -63,7 +63,7 @@ public class MainControllerTest {
         assertNull(result.getModel().get(OWNER));
         assertEquals(user, result.getModel().get(USER));
 
-        verify(authenticationService, times(1)).removeUserAttributeFromSession(EXIT, httpSession);
+        verify(authenticationService, times(1)).removeUserIfExitPressed(EXIT, httpSession);
         verify(httpServletRequest, times(2)).getSession();
         verify(itemCacheDao, times(1)).get();
         verify(itemCacheDao, times(0)).getById(anyString());

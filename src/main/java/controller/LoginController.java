@@ -1,5 +1,7 @@
 package controller;
 
+import counter.LoginedCounter;
+import counter.OnlineCounter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,12 +24,18 @@ public class LoginController {
     private static final String PASS = "pass";
     private static final String MAIN_PAGE = "/main";
     private static final String LOGIN_PAGE = "/login";
+    private static final String ONLINE_COUNTER = "onlineCounter";
+    private static final String LOGINED_COUNTER = "loginedCounter";
     
     @Autowired
     private UserService userService;
 
     @Autowired
     private ControllerService controllerService;
+     @Autowired
+    private OnlineCounter onlineCounter;
+    @Autowired
+    private LoginedCounter loginedCounter;
 
     @GetMapping
     public ModelAndView defaultView(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -35,6 +43,8 @@ public class LoginController {
             response.sendRedirect(MAIN_PAGE);
         }
         ModelAndView mav = controllerService.getModelAndView(LOGIN);
+        mav.addObject(ONLINE_COUNTER, onlineCounter);
+        mav.addObject(LOGINED_COUNTER, loginedCounter);
         return mav;
     }
 

@@ -1,5 +1,7 @@
 package controller;
 
+import counter.LoginedCounter;
+import counter.OnlineCounter;
 import entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,9 +30,15 @@ public class ProfileController {
     private static final String USER = "user";
     private static final String MAIN_PAGE = "/main";
     private static final String PROFILE_PAGE = "/profile";
+    private static final String ONLINE_COUNTER = "onlineCounter";
+    private static final String LOGINED_COUNTER = "loginedCounter";
 
     @Autowired
     private UserService userService;
+     @Autowired
+    private OnlineCounter onlineCounter;
+    @Autowired
+    private LoginedCounter loginedCounter;
 
     @GetMapping
     public ModelAndView defaultView(HttpServletRequest request,
@@ -41,6 +49,8 @@ public class ProfileController {
         User u = userService.getUserFromSession(request.getSession());
         ModelAndView mav = new ModelAndView(PROFILE);
         mav.addObject(USER, u);
+        mav.addObject(ONLINE_COUNTER, onlineCounter);
+        mav.addObject(LOGINED_COUNTER, loginedCounter);
         return mav;
     }
 

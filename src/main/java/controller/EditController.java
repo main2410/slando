@@ -1,5 +1,7 @@
 package controller;
 
+import counter.LoginedCounter;
+import counter.OnlineCounter;
 import entity.User;
 import entity.Item;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,11 +32,17 @@ public class EditController {
     private static final String PIC = "pic";
     private static final String DELETE = "delete";
     private static final String MAIN_PAGE = "/main";
+    private static final String ONLINE_COUNTER = "onlineCounter";
+    private static final String LOGINED_COUNTER = "loginedCounter";
 
     @Autowired
     private ItemService itemService;
     @Autowired
     private UserService userService;
+     @Autowired
+    private OnlineCounter onlineCounter;
+    @Autowired
+    private LoginedCounter loginedCounter;
 
     @GetMapping
     public ModelAndView defaultView (HttpServletRequest request, HttpServletResponse response,
@@ -45,6 +53,8 @@ public class EditController {
         }
         Item item = itemService.getItemById(id);
         ModelAndView mav = new ModelAndView(EDIT);
+        mav.addObject(ONLINE_COUNTER, onlineCounter);
+        mav.addObject(LOGINED_COUNTER, loginedCounter);
         mav.addObject(ITEM, item);
         return mav;
     }
