@@ -16,7 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
 @Controller
 @RequestMapping(value = "/additem")
 
@@ -29,7 +28,6 @@ public class AddController {
     private static final String PRICE = "price";
     private static final String PIC = "pic";
     private static final String MAIN_PAGE = "/main";
-//    private static final String ADD_ITEM_PAGE = "/additem";
     private static final String ONLINE_COUNTER = "onlineCounter";
     private static final String LOGINED_COUNTER = "loginedCounter";
 
@@ -37,7 +35,7 @@ public class AddController {
     private UserService userService;
     @Autowired
     private ItemService itemService;
-     @Autowired
+    @Autowired
     private OnlineCounter onlineCounter;
     @Autowired
     private LoginedCounter loginedCounter;
@@ -60,8 +58,7 @@ public class AddController {
                          @RequestParam(name = ABOUT, required = false) String about,
                          @RequestParam(name = PRICE, required = false) Integer price,
                          @RequestParam(name = PIC, required = false) String pic,
-                         HttpServletRequest request) throws IOException {
-
+                         HttpServletRequest request) {
         itemService.addItem(cat, name, about, price, pic, userService.getUserFromSession(request.getSession()));
     }
 }
