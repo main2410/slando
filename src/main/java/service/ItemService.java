@@ -5,6 +5,7 @@ import entity.Item;
 import entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.sql.Timestamp;
 import java.util.LinkedList;
 import java.util.List;
@@ -31,9 +32,9 @@ public class ItemService {
                 createDate(new Timestamp(System.currentTimeMillis())).build());
     }
 
-    public Item getItemById (String id) {
+    public Item getItemById(String id) {
         Item item = new Item();
-        List<Item> items = new LinkedList<Item>();
+        List<Item> items = new LinkedList<>();
         if (id != null) {
             items = itemCacheDao.getById(id);
         }
@@ -43,10 +44,10 @@ public class ItemService {
         return item;
     }
 
-    public void changeItem (Item item, String cat, String name, String about,
-                            String pic, Integer price) {
+    public void changeItem(Item item, String cat, String name, String about,
+                           String pic, Integer price, String isVip, String top) {
         if (item != null) {
-            if (cat != null){
+            if (cat != null) {
                 item.setCat(cat);
             }
             if (name != null) {
@@ -61,11 +62,13 @@ public class ItemService {
             if (price != null) {
                 item.setPrice(price);
             }
+            item.setIsVip(isVip != null && isVip.equals("true"));
+            if (item.getIsVip() || top != null) item.setCreateDate(new Timestamp(System.currentTimeMillis()));
             itemCacheDao.update(item);
         }
     }
 
-    public void deleteItem (Item item) {
+    public void deleteItem(Item item) {
         itemCacheDao.delete(item);
     }
 

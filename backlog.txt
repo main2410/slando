@@ -95,9 +95,9 @@ Project created, configured;
 
 36)++Create TINYINT 'vip' field in Item and slando_item table
 
-37)Create logic in edit.jsp and EditController to do additional operations (up to top, set vip)
+37)++Create logic in edit.jsp and EditController to do additional operations (up to top, set vip)
 
-38)Create logic in main.jsp and MainController to show 3 vip items in one line in top of all items
+38)++Create logic in main.jsp and MainController to show 3 vip items in one line in top of all items
 
 39)++Create caching for items. Your logic will updates cache every 1 minute (in single thread)
 
