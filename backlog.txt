@@ -1,120 +1,34 @@
-SLANDO
+Tasks:
 
-Project created, configured;
-
-1)++ Create MainController witch receiving requests to /
-
-2)++ Create entity of 'slando_user' table  (with lombok)
-   User table structure:
-   id VARCHAR(255) pk    (UUID.randomUUID().toString();)
-   login VARCHAR(255)
-   pass VARCHAR(255)
-   phone VARCHAR(255)
-   email VARCHAR(255)
-   city VARCHAR(255)
-   create_date TIMESTAMP    (@Column(name="create_date"))
-
-3)++ Create entity of 'slando_item' table  (with lombok)
-   Item table structure:
-   id VARCHAR(255) pk
-   cat VARCHAR(255)
-   name VARCHAR(255)
-   about VARCHAR(255)
-   pic VARCHAR(255)
-   owner VARCHAR(255)
-   phone VARCHAR(255)
-   email VARCHAR(255)
-   city VARCHAR(255)
-   price INT
-   create_date TIMESTAMP   (java.util.Date)
-   is_vip TINYINT
-
-4)++ Create RegisterController     /register
-
-5)++ Create LoginController        /login
-
-6)++ Configure Hibernate (hibernate.cfg.xml, HibernateUtil)
-
-7)++ Create UserDao with getByLogin(String login), add(User u), update(User u) methods
-
-8)++ Create ItemDao with get(), getById(String id), add(Item i)
-
-9)++ Create main.jsp
-
-10)++Configure SpringMVC in web.xml (DispatcherServlet adding)
-
-11)++Create dispatcher-servlet.xml (from pervious project)
-
-12)++Write code in get-mapped method of MainController to show main.jsp
-
-13)++Create register.jsp
-
-14)++Create login.jsp
-
-15)++Write code in RegisterController's get-mapped method to show register.jsp
-
-16)++Write code in LoginController's get-mapped method to show login.jsp
-
-17)++Create UserService, ItemService as spring services
-
-18)++Create AuthenticationService as spring service
-
-19)++Update main.jsp to receive 'user' object and show correct buttons - sign in or profile/exit/add new item (with help of jstl's if and forEach)
-
-20)++Update MainController to place 'user' object from session to the model
-
-21)++Write code in RegisterController's post-mapped method witch registers a new user
-
-22)++Update MainController to do exit
-
-23)++Write code in LoginController's post-mapped method to log in a user ('user' object in session's attribute)
-
-24)++Write logic in MainController to put 'items' into the model
-
-25)++Write logic in main.jsp to show 'items'
-
-26)++Create logic in main.jsp and MainController to search items by category (dropdown list and search button)
-
-27)++Create logic in main.jsp and MainController to search items by keyword (input text field and search button)
-
-28)++Create add.jsp
-
-29)++Create AddController to add new item (for logined users only)
-
-30)++Create edit.jsp to edit item's parameters, remove item
-
-31)++Create EditController (for item's owner only)
-
-32)++Create profile.jsp
-
-33)++Create ProfileController to change user's settings (for logined users only)
-
-34)++Create counter witch shows how many logined users on the site, how many users on site (two counter variables)
-
-35)++Create SessionListener witch will decrement counter(s) when session destroyed
-
-36)++Create TINYINT 'vip' field in Item and slando_item table
-
-37)++Create logic in edit.jsp and EditController to do additional operations (up to top, set vip)
-
-38)++Create logic in main.jsp and MainController to show 3 vip items in one line in top of all items
-
-39)++Create caching for items. Your logic will updates cache every 1 minute (in single thread)
-
-40)++Create ItemCacheDao witch will works with cached items.
-
-41)++Change logic everywhere to work with ItemCacheDao (not with ItemDao itself)
-
-42)Refactor controllers to work with services
-
-43)Tests for all controllers (after 42)
-
-44)Tests for all services (after 42)
-
-45)Create constants.StringConstants class with all public String constants for all project
-
-46)++Refactor dao level to work with Spring Data Repositories (huge)
-
-47)Refactor Hibernate level: do use Hibernate without HibernateUtil using (less huge)
-
-48)Validate email and phone when user registers or edits his profile
+1)++ Configure project
+2)++ Create test main.jsp, test MainController
+3) Create hs_user table (id VARCHAR, login, pass, lvl INT, points INT, deck VARCHAR, vip TINYINT, class VARCHAR,
+   date TIMESTAMP, money INT)
+4) Create hs_item table (id INT, picture, nameCreature, nameSpell, damage INT, hp INT, mana INT, primary_skill VARCHAR,
+   secondary_skill VARCHAR, about)
+5) Create entities for those tables
+6) Create repositories
+7) Create services for most common operations
+8) Change MainController to put in model user's object
+9) In header.jsp of main page must be your login, date of registration, your level,
+   your points, how much points to next level, your money, is you in vip mode, exit button,
+   cards button
+10)In footer.jsp - your login, exit button
+11)In content page (main.jsp) You must show your class and the cards in your deck. Card must show her level, name,
+   about, damage, armor. Also in content must be a button to change deck / class.
+12)Create DeckController witch provides user to change his deck or class. In top of content - big
+   button Change Class, when you push it - must reload a new page with all classes pictures (clickable).
+   Under ChangeClass button and your class name - in left side must show all 20 cards in your current deck,
+   in right side - all available for current class cards. You can delete card from the deck by it clicking, add
+   card into deck by it clicking. Save button unavailable until 20 cards is present in your deck.
+13)Create deck.jsp for 12 story.
+14)On header.jsp create button In Battle.
+15)Create BattleController witch handles battle.
+16)Create battle.jsp. In left center - refresh button (if opponent turn), or finish button - if your turn.
+   In right center - timer to done. In top must be an anemy (his class, cards on table, quantity of cards in hands,
+   quantity of cards in deck mana points, hero hp). In bottom must be your hero with hero power button and hp and mana,
+   your cards in hand, cards on table, quantity of cards in deck. You can push a card, a hero power. If you push
+   a creature card in hand - this card must go on table (if mana avaliable). If you push a spell card - red border
+   and wait for the target. If you push a hero power, and if it works immidiately - do it work, if not - red
+   border around a power picture and waits for target.
+17)Refactor BattleController for common operations.
