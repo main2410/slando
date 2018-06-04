@@ -111,10 +111,10 @@ Project created, configured;
 
 44)Tests for all services (after 42)
 
-45)Create constants.StringConstants class with all public String constants for all project
+45)++Create constants.StringConstants class with all public String constants for all project
 
-46)Refactor dao level to work with Spring Data Repositories (huge)
+46)++Refactor dao level to work with Spring Data Repositories (huge)
 
 47)Refactor Hibernate level: do use Hibernate without HibernateUtil using (less huge)
 
-48)Validate email and phone when user registers or edits his profile
+48)++Validate email and phone when user registers or edits his profile

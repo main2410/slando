@@ -12,7 +12,7 @@ import java.sql.Timestamp;
 
 @Service
 public class UserService {
-    
+
     @Autowired
     private LoginedCounter loginedCounter;
 
@@ -45,7 +45,7 @@ public class UserService {
 
     public boolean login(String login, String pass, HttpSession session) {
         User u = userRepository.findByLogin(login);
-        if (pass.equals(u.getPass())) {
+        if (u != null && pass.equals(u.getPass())) {
             session.setAttribute(USER, u);
             loginedCounter.increment();
             return true;
@@ -57,10 +57,10 @@ public class UserService {
         return getUserFromSession(session) != null;
     }
 
-    public void changeProfile (User u, String oldPass, String pass1,
-                                String pass2, String phone, String email, String city) {
+    public void changeProfile(User u, String oldPass, String pass1,
+            String pass2, String phone, String email, String city) {
         if (u != null) {
-            if (u.getPass().equals(oldPass) && pass1 != null && pass1.equals(pass2)){
+            if (u.getPass().equals(oldPass) && pass1 != null && pass1.equals(pass2)) {
                 u.setPass(pass2);
             }
             if (verificationService.isCorrectPhone(phone)) {
