@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import service.ControllerService;
 import service.UserService;
-
+import static constants.StringConstants.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -20,12 +20,7 @@ import java.io.IOException;
 @RequestMapping(value = "/login")
 public class LoginController {
     
-    private static final String LOGIN = "login";
-    private static final String PASS = "pass";
-    private static final String MAIN_PAGE = "/main";
-    private static final String LOGIN_PAGE = "/login";
-    private static final String ONLINE_COUNTER = "onlineCounter";
-    private static final String LOGINED_COUNTER = "loginedCounter";
+    
     
     @Autowired
     private UserService userService;

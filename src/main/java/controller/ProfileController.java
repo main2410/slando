@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import service.UserService;
-
+import static constants.StringConstants.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -20,18 +20,7 @@ import java.io.IOException;
 @RequestMapping(value = "/profile")
 public class ProfileController {
 
-    private static final String PROFILE = "profile";
-    private static final String OLD_PASS = "oldPass";
-    private static final String PASS1 = "pass1";
-    private static final String PASS2 = "pass2";
-    private static final String PHONE = "phone";
-    private static final String EMAIL = "email";
-    private static final String CITY = "city";
-    private static final String USER = "user";
-    private static final String MAIN_PAGE = "/main";
-    private static final String PROFILE_PAGE = "/profile";
-    private static final String ONLINE_COUNTER = "onlineCounter";
-    private static final String LOGINED_COUNTER = "loginedCounter";
+   
 
     @Autowired
     private UserService userService;

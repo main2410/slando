@@ -13,22 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import service.UserService;
+import static constants.StringConstants.*;
 
 @Controller
 @RequestMapping(value = "/register")
 public class RegisterController {
 
-    private static final String REGISTER = "register";
-    private static final String LOGIN = "login";
-    private static final String PASS1 = "pass1";
-    private static final String PASS2 = "pass2";
-    private static final String PHONE = "phone";
-    private static final String EMAIL = "email";
-    private static final String CITY = "city";
-    private static final String MAIN_PAGE = "/main";
-    private static final String REGISTER_PAGE = "/register";
-    private static final String ONLINE_COUNTER = "onlineCounter";
-    private static final String LOGINED_COUNTER = "loginedCounter";
+   
     
     @Autowired
     private UserService userService;

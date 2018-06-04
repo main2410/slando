@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import service.ItemService;
 import service.UserService;
-
+import static constants.StringConstants.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -22,16 +22,7 @@ import java.io.IOException;
 
 public class AddController {
 
-    private static final String ADDITEM = "additem";
-    private static final String CAT = "cat";
-    private static final String NAME = "name";
-    private static final String ABOUT = "about";
-    private static final String PRICE = "price";
-    private static final String PIC = "pic";
-    private static final String MAIN_PAGE = "/main";
-//    private static final String ADD_ITEM_PAGE = "/additem";
-    private static final String ONLINE_COUNTER = "onlineCounter";
-    private static final String LOGINED_COUNTER = "loginedCounter";
+    
 
     @Autowired
     private UserService userService;
